@@ -1,9 +1,19 @@
-// two classes
+// form class for the todo list
 class ToDoForm {
-  constructor () {
-    this.formDiv = document.getElementById('form-container')
+  // constructor () {
+  //   this.formDiv = document.getElementById('form-container')
+  //   this.appendToDiv()
+  // }
+  static appendToDiv (divID) {
+    // this.formDiv.innerHTML = this.renderForm()
+
+    // let myDiv = document.createElement('div')
+    // myDiv.className = 'form-container'
+    // document.body.append(myDiv)
+    // myDiv.innerHTML = ToDoForm.renderForm()
+    document.getElementById(divID).innerHTML = ToDoForm.renderForm()
   }
-  renderForm () {
+  static renderForm () {
     return `<div class="row">
               <form class="col s12">
                 <div class="row">
@@ -19,7 +29,8 @@ class ToDoForm {
               </form>
             </div>`
   }
-  appendToDiv () {
-    this.formDiv.innerHTML = this.renderForm()
-  }
 }
+ToDoForm.appendToDiv('form-container')
+// let myform = ToDoForm.constructor()
+// let myForm = new ToDoForm()
+// myForm.appendToDiv() -> moved to constructor
